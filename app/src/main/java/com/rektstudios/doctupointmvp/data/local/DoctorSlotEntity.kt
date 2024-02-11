@@ -17,6 +17,6 @@ data class DoctorSlotEntity(
 	val timeSlot: String,
 	val totalSlots: Int,
 	val availableSlots: Int,
-	val slotStatus: Int,
+	val slotStatus: String,
 	@PrimaryKey val id: Int? = null
 )
