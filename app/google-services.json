@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "582303895708",
+    "project_id": "doctupoint-mvp",
+    "storage_bucket": "doctupoint-mvp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582303895708:android:a6c79c8a831aa17cbd9d59",
+        "android_client_info": {
+          "package_name": "com.rektstudios.doctupointmvp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2UebAGniiOXOzjvSbhXR_G89LtmAYT1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
