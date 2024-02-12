@@ -6,5 +6,5 @@ import androidx.room.PrimaryKey
 @Entity
 data class DoctorEntity(
 	val name: String,
-	@PrimaryKey val id: Int? = null
+	@PrimaryKey(autoGenerate = true) val id: Int? = null
 )

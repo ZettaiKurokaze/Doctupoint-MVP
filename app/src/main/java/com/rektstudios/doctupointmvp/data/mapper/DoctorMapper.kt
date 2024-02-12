@@ -30,7 +30,6 @@ fun DoctorSlotEntity.toDoctorSlot(): DoctorSlot{
 	return DoctorSlot(
 		timeSlot = timeSlot,
 		totalSlots = totalSlots,
-		availableSlots = availableSlots,
 		slotAvailability = slotAvailability,
 		id = id!!
 	)
@@ -40,7 +39,6 @@ fun DoctorSlot.toDoctorSlotEntity(doctor: Doctor): DoctorSlotEntity{
 	return DoctorSlotEntity(
 		timeSlot = timeSlot,
 		totalSlots = totalSlots,
-		availableSlots = availableSlots,
 		slotAvailability = slotAvailability,
 		doctorId = doctor.id,
 		id = id
@@ -51,7 +49,6 @@ fun DoctorSlot.toNewDoctorSlotEntity(doctor: Doctor): DoctorSlotEntity{
 	return DoctorSlotEntity(
 		timeSlot = timeSlot,
 		totalSlots = totalSlots,
-		availableSlots = availableSlots,
 		slotAvailability = slotAvailability,
 		doctorId = doctor.id,
 	)

@@ -21,5 +21,5 @@ import androidx.room.PrimaryKey
 data class PatientSlotEntity(
 	val patientId: Int,
 	val slotId: Int,
-	@PrimaryKey val id: Int? = null
+	@PrimaryKey(autoGenerate = true) val id: Int? = null
 )

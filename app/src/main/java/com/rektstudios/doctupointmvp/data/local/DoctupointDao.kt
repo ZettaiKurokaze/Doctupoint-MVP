@@ -24,6 +24,24 @@ interface DoctupointDao {
 		patientSlotEntities: List<PatientSlotEntity>
 	)
 
+	@Query("SELECT * FROM doctorentity WHERE id = (:id)")
+	suspend fun getDoctor(id: Int): DoctorEntity
+
+	@Query("SELECT * FROM doctorslotentity WHERE id = (:id)")
+	suspend fun getDoctorSlot(id: Int): DoctorSlotEntity
+
+	@Query("SELECT * FROM doctorslotentity WHERE doctorId = (:id)")
+	suspend fun getDoctorSlots(id: Int): List<DoctorSlotEntity>
+
+	@Query("SELECT * FROM patiententity WHERE id = (:id)")
+	suspend fun getPatient(id: Int): PatientEntity
+
+	@Query("SELECT * FROM patientslotentity WHERE id = (:id)")
+	suspend fun getPatientSlot(id: Int): PatientSlotEntity
+
+	@Query("SELECT * FROM patientslotentity WHERE patientId = (:id)")
+	suspend fun getPatientSlots(id: Int): List<PatientSlotEntity>
+
 	@Query("DELETE FROM doctorentity WHERE id = (:id)")
 	suspend fun deleteDoctor(id: Int)
 

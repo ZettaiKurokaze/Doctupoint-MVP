@@ -18,7 +18,6 @@ data class DoctorSlotEntity(
 	val doctorId: Int,
 	val timeSlot: String,
 	val totalSlots: Int,
-	val availableSlots: Int,
 	val slotAvailability: Boolean,
-	@PrimaryKey val id: Int? = null
+	@PrimaryKey(autoGenerate = true) val id: Int? = null
 )
