@@ -4,7 +4,6 @@ import com.rektstudios.doctupointmvp.data.local.DoctorEntity
 import com.rektstudios.doctupointmvp.data.local.DoctorSlotEntity
 import com.rektstudios.doctupointmvp.domain.model.Doctor
 import com.rektstudios.doctupointmvp.domain.model.DoctorSlot
-import com.rektstudios.doctupointmvp.domain.model.Patient
 
 fun DoctorEntity.toDoctor(slots: List<DoctorSlot> = emptyList<DoctorSlot>()): Doctor {
 	return Doctor(
@@ -20,13 +19,19 @@ fun Doctor.toDoctorEntity(): DoctorEntity {
 		id = id
 	)
 }
-fun DoctorSlotEntity.toDoctorSlot(patients: List<Patient> = emptyList<Patient>()): DoctorSlot{
+
+fun Doctor.toNewDoctorEntity(): DoctorEntity {
+	return DoctorEntity(
+		name = name,
+	)
+}
+
+fun DoctorSlotEntity.toDoctorSlot(): DoctorSlot{
 	return DoctorSlot(
 		timeSlot = timeSlot,
 		totalSlots = totalSlots,
 		availableSlots = availableSlots,
-		slotStatus = slotStatus,
-		patients = patients,
+		slotAvailability = slotAvailability,
 		id = id!!
 	)
 }
@@ -36,8 +41,18 @@ fun DoctorSlot.toDoctorSlotEntity(doctor: Doctor): DoctorSlotEntity{
 		timeSlot = timeSlot,
 		totalSlots = totalSlots,
 		availableSlots = availableSlots,
-		slotStatus = slotStatus,
+		slotAvailability = slotAvailability,
 		doctorId = doctor.id,
 		id = id
+	)
+}
+
+fun DoctorSlot.toNewDoctorSlotEntity(doctor: Doctor): DoctorSlotEntity{
+	return DoctorSlotEntity(
+		timeSlot = timeSlot,
+		totalSlots = totalSlots,
+		availableSlots = availableSlots,
+		slotAvailability = slotAvailability,
+		doctorId = doctor.id,
 	)
 }

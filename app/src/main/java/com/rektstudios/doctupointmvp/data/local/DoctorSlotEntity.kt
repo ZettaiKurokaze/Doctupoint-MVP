@@ -11,12 +11,14 @@ import androidx.room.PrimaryKey
 		childColumns = ["doctorId"],
 		parentColumns = ["id"],
 		onDelete = ForeignKey.CASCADE),
-	])
+	],
+	indices = [androidx.room.Index(value = ["doctorId"])]
+	)
 data class DoctorSlotEntity(
 	val doctorId: Int,
 	val timeSlot: String,
 	val totalSlots: Int,
 	val availableSlots: Int,
-	val slotStatus: String,
+	val slotAvailability: Boolean,
 	@PrimaryKey val id: Int? = null
 )

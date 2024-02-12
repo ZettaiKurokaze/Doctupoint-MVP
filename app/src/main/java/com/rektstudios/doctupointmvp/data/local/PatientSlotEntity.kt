@@ -17,7 +17,7 @@ import androidx.room.PrimaryKey
 	parentColumns = ["id"],
 	onDelete = ForeignKey.CASCADE),
 	],
-	indices = [Index(value = ["patientId", "slotId"], unique = true)])
+	indices = [Index(value = ["patientId", "slotId"], unique = true), Index(value = ["slotId"])])
 data class PatientSlotEntity(
 	val patientId: Int,
 	val slotId: Int,
