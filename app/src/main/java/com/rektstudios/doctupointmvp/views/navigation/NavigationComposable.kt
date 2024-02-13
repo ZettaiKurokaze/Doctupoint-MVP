@@ -13,8 +13,7 @@ fun NavigationComposable(){
 	val navController = rememberNavController()
 //	val firstName = sharedPreferences.getString("firstName", "")
 	val firstName = "test"
-	NavHost(navController = navController, startDestination = if(firstName!!.isBlank())
-	{Onboarding.route} else {DoctorDashboard.route}) {
+	NavHost(navController = navController, startDestination = DoctorDashboard.route) {
 		composable(DoctorDashboard.route) {
 			DoctorDashboardScreen(navController)
 		}

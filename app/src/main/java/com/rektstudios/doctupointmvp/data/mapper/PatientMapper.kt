@@ -5,7 +5,7 @@ import com.rektstudios.doctupointmvp.data.local.PatientSlotEntity
 import com.rektstudios.doctupointmvp.domain.model.Patient
 import com.rektstudios.doctupointmvp.domain.model.PatientSlot
 
-fun PatientEntity.toPatient(slots: List<PatientSlot>): Patient{
+fun PatientEntity.toPatient(slots: List<PatientSlot> = emptyList<PatientSlot>()): Patient{
 	return Patient(
 		name = name,
 		slots = slots,

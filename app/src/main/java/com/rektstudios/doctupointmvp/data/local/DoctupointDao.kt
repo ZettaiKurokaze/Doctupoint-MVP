@@ -16,16 +16,19 @@ interface DoctupointDao {
 		patientEntities: List<PatientEntity>
 	)
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	suspend fun insertDoctorSlots(
-		doctorSlotEntities: List<DoctorSlotEntity>
+	suspend fun insertDoctorSlot(
+		doctorSlotEntity: DoctorSlotEntity
 	)
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
-	suspend fun insertPatientSlots(
-		patientSlotEntities: List<PatientSlotEntity>
+	suspend fun insertPatientSlot(
+		patientSlotEntity: PatientSlotEntity
 	)
 
 	@Query("SELECT * FROM doctorentity WHERE id = (:id)")
 	suspend fun getDoctor(id: Int): DoctorEntity
+
+	@Query("SELECT * FROM doctorentity")
+	suspend fun getDoctors(): List<DoctorEntity>
 
 	@Query("SELECT * FROM doctorslotentity WHERE id = (:id)")
 	suspend fun getDoctorSlot(id: Int): DoctorSlotEntity
@@ -36,6 +39,9 @@ interface DoctupointDao {
 	@Query("SELECT * FROM patiententity WHERE id = (:id)")
 	suspend fun getPatient(id: Int): PatientEntity
 
+	@Query("SELECT * FROM patiententity")
+	suspend fun getPatients(): List<PatientEntity>
+
 	@Query("SELECT * FROM patientslotentity WHERE id = (:id)")
 	suspend fun getPatientSlot(id: Int): PatientSlotEntity
 
@@ -45,11 +51,17 @@ interface DoctupointDao {
 	@Query("DELETE FROM doctorentity WHERE id = (:id)")
 	suspend fun deleteDoctor(id: Int)
 
+	@Query("DELETE FROM doctorentity")
+	suspend fun clearDoctors()
+
 	@Query("DELETE FROM doctorslotentity WHERE id = (:id)")
 	suspend fun deleteDoctorSlot(id: Int)
 
 	@Query("DELETE FROM patiententity WHERE id = (:id)")
 	suspend fun deletePatient(id: Int)
+
+	@Query("DELETE FROM patiententity")
+	suspend fun clearPatients()
 
 	@Query("DELETE FROM patientslotentity WHERE id = (:id)")
 	suspend fun deletePatientSlot(id: Int)
